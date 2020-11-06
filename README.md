@@ -8,14 +8,6 @@ CLR
 
 JIT (just in time) converts compiled code into machine instructions
 
-
-
-Program.cs file explained
---------------------------
-Classes can contain functions (methods) and variables (properties)
-void - return type of the application (nothing will be returned)
-Static - when you use static it means that there are no instances, you are referring to the function itself
-
 Declaring variable
 ------------------
 Declare variable by prefixing it with the type e.g. 
@@ -69,3 +61,4 @@ int correctNumber = random.Next(1, 10);
 Tutorials
 ==========
 Build a C# .NET application in 60 minutes https://www.youtube.com/watch?v=GcFJjpMFJvI
+Introduction to asp.net mvc https://www.youtube.com/watch?v=phyV-OQNeRM
