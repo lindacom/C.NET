@@ -1,6 +1,8 @@
 Create an MVC application
 ================================
-1. Create a model, view and controller file
+1. In visual studio go to file > new project, select c# > web > asp.net web application (.net framework) and enter a project name and solution name
+2. Select MVC template and keep setting as no authentication. Nuget packages are installed and application is ready.
+3. Create a model, view and controller file and write code
 2. Run the application
 3.Publishing an MVC application - rght click and select publish
 
