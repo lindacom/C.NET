@@ -1,4 +1,4 @@
- Connect to database and return results from a Person model to a list
+ Connect to database, query and return results from a Person model to a list
  ======================================================================
  
  App.config file
@@ -16,4 +16,13 @@
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("mySampleDb")))
             {
                 return connection.Query<Person>($"select * from People where LastName = '{lastName}'").toList();
+            }
+            
+ Connect to database, access stored procedure passing in parameters and return results from a Person model to a list
+ ======================================================================
+ 
+   using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("mySampleDb")))
+            {
+                return connection.Query<Person>("dbo.my_storedprocedure @Lastname", new ( LastName = lastName )).ToList();
+               
             }
