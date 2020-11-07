@@ -1,0 +1,5 @@
+Application to search and add people to the database
+=====================================================
+
+App.config - configuration file containing database connection string
+Dashboard.cs - the form ui with click event code
