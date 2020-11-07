@@ -7,6 +7,10 @@ A form1.cs file is created
 
 Sql server database tables and stored procedures
 
+Connection string
+helper
+model
+
 create a model
 -------------
 
@@ -42,6 +46,12 @@ Add connection string
 ---------------------
 add connection string to App.config file in the configuration section of the file add connection string tags
 
-go to connectionstrings.com and click the link for sql server and clcik .net frameork data provider for sql server. Select server version and copy code for either trusted (already authenticated) or standard security (username and password for the database required)
+To get a connection string go to connectionstrings.com and click the link for sql server and clcik .net frameork data provider for sql server. Select server version and copy code for either trusted (already authenticated) or standard security (username and password for the database required)
 
-Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;
+Paste the connecion string Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;
+
+Change server name or enter. for localhost and eter database name, id and password
+
+Create UI
+-----------
+In the form.cs file click toolbox menu and drag a listbox into the form
