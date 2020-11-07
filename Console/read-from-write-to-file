@@ -1,0 +1,39 @@
+Read from and write to a text file
+===================================
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace ConsoleUI
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // use the @ symbol to specify that the \ is not an escaped character but a path
+            string filePath = @"C:\Users\cex\Desktop\Test.txt";
+
+            // read the file, convert to list and put in the lines variable
+            List<string> lines = File.ReadAllLines(filePath).ToList();
+      
+        // loop through the entries in the file
+        foreach (string line in lines)
+            {
+                // write to the console
+                Console.WriteLine(line);
+            }
+
+        // add to the list
+            lines.Add("Sue,Storm,www.story.com");
+
+            // write to the same text file
+            File.WriteAllLines(filePath, lines);
+
+            Console.ReadLine();
+        }
+    }
+}
