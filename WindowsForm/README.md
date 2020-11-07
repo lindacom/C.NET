@@ -63,7 +63,7 @@ Add a class to the project with a method for the data access.
 ```
  public List<Person> GetPeople(string firstName)
         {
-            throw new NotImplementedException();
+           
         }
  ```
  
@@ -85,4 +85,14 @@ Add a class to the project with a method for the data access.
             people = db.GetPeople(LastNameText.Text);
         }
     }
-        ```
+   ```
+   Add Dapper package
+   ====================
+   Right click references > manage nuget packages. Search for Dapper and install. This is a package that connects to sql server.
+   
+   Using dapper
+   ------------
+   
+   In the data access class file add using Dapper;
+        
+      
