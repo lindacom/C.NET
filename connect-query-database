@@ -18,8 +18,10 @@
                 return connection.Query<Person>($"select * from People where LastName = '{lastName}'").toList();
             }
             
+ N.b. calling a stored procedure instead of using a direct sql query is a lot safer and prevents code injection.
+            
  Connect to database, access stored procedure passing in parameters and return results from a Person model to a list
- ======================================================================
+ ==================================================================================================================
  
    using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("mySampleDb")))
             {
