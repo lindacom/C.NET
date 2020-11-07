@@ -23,8 +23,15 @@ Static - when you use static it means that there are no instances, you are refer
 Read from and write to a text file
 -------------------------------------
 
-Uses system.IO
-put the file path in a variable
-Enter the command to read the file. This returns an array of strings
-Loop through the array
-write to the console
+1. Uses system.IO
+2. put the file path in a variable
+3. Enter the command to read the file. This returns an array of strings
+4. Loop through the array
+5. write to the console
+
+Split array by comma separator
+--------------------------------
+foreach (var line in lines)
+{
+string[] entries = line.Split(',');
+}
