@@ -54,4 +54,35 @@ Change server name or enter. for localhost and eter database name, id and passwo
 
 Create UI
 -----------
-In the form.cs file click toolbox menu and drag a listbox into the form
+In the form.cs file click toolbox menu and drag a listbox into the form. In the properties box enter a name for this element.
+
+Add a button.  Double click the button to add an event. e.g. call database and search
+
+Add a class to the project with a method for the data access.
+
+```
+ public List<Person> GetPeople(string firstName)
+        {
+            throw new NotImplementedException();
+        }
+ ```
+ 
+ In the form.cs file call the method
+ 
+ ```
+  public partial class Dashboard : Form
+    {
+        List<Person> people = new List<Person>();
+        public Dashboard()
+        {
+            InitializeComponent();
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            DataAccess db = new DataAccess();
+
+            people = db.GetPeople(LastNameText.Text);
+        }
+    }
+        ```
