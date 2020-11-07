@@ -27,12 +27,31 @@ namespace FormUI
             PeopleFoundListbox.DisplayMember = "FullInfo";
         }
 
+// get people
         private void searchButton_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
 
             // gets value fom the text box
             people = db.GetPeople(LastNameText.Text);
+        }
+        
+        // add people
+        
+         private void button1_Click(object sender, EventArgs e)
+        {
+            DataAccess db = new DataAccess();
+
+            // insert value of form fields into database using insert person method in DataAccess file
+            db.InsertPerson(firstNameInsText.Text, lastNameInsText.Text, emailAddressInsText.Text, phoneNumberInsText.Text);
+
+            firstNameInsText.Text = "";
+            lastNameInsText.Text = "";
+            emailAddressInsText.Text = "";
+            phoneNumberInsText.Text = "";
+        
+        
+        
         }
     }
 }
