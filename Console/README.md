@@ -19,3 +19,12 @@ Program.cs file explained
 Classes can contain functions (methods) and variables (properties)
 void - return type of the application (nothing will be returned)
 Static - when you use static it means that there are no instances, you are referring to the function itself
+
+Read from and write to a text file
+-------------------------------------
+
+Uses system.IO
+put the file path in a variable
+Enter the command to read the file. This returns an array of strings
+Loop through the array
+write to the console
