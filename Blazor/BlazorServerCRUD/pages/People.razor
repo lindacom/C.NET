@@ -10,6 +10,8 @@
 <h3>People</h3>
 
 <button class="btn btn-primary" @onclick="InsertData">Insert</button>
+<button class="btn btn-warning" @onclick="UpdateData">Update</button>
+<button class="btn btn-danger" @onclick="DeleteData">Delete</button>
 
 @if (people == null)
 {
@@ -46,9 +48,19 @@
     }
         
         // UPDATE DATA
-          private async Task UpdateData()
+    private async Task UpdateData()
     {
-        string sql = "update People set FirstName = 'Timothy' where Lastname = 'black'";
+        string sql = "update People set FirstName = @FirstName where Lastname = @LastName";
+        await _data.SaveData(sql, new { FirstName = "Billy", LastName = "Jones" }, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
+    }
+
+         // DELETE DATA
+    private async Task DeleteData()
+    {
+        string sql = "delete from People where Lastname = @LastName";
+        await _data.SaveData(sql, new { LastName = "white" }, _config.GetConnectionString("default"));
+        await OnInitializedAsync();
     }
 
 }
