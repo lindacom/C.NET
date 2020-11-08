@@ -66,3 +66,33 @@ namespace DataLibrary
 }
 }
 ```
+Add services to the container
+----------------------------
+
+In the startup.cs file add a using DataLibrary statement (this refers to the namespace you created) and then in the public IConfiguration Configuration section add the service
+
+```
+ services.AddSingleton<DataAccess>();
+ ```
+
+Create an interface
+--------------------
+In the class file hover over the class name and click ctrl + . and select extract interface.  Enter an interface name beginning ith i (or keep the default) and select public members to form interface.  
+
+You now have an interface that matches the class. The benefit is that as you wil use this multiple times you always have it open rather than having to open and close it each time.
+
+In the startup.c file change service to 
+
+```
+ services.AddSingleton<IDataAccess, DataAccess>();
+ ```
+ 
+ Await/async
+ ===============
+ Model to put the data into
+ something to call
+ variable to put it into
+ 
+ In the blazor project create a models folder
+ In the models folder add a new class e.g. PersonModel
+ add properties to the model class N.b you can type prop and tab twice to automatically create a property.
