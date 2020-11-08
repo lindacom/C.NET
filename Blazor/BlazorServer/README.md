@@ -5,3 +5,15 @@ Person.razor - injects data using model, contains sql query and connection strin
 Models
 -------
 PersonModel.cs
+
+appsetting.json - database configuration settings
+
+Data library (project)
+-----------------------
+DataAccess.cs
+IDataAccess.cs - interface
+
+Packages
+-------
+Dapper
+MySql.data
