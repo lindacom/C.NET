@@ -44,5 +44,11 @@
 
         people = await _data.LoadData<BlazorApp.Models.PersonModel, dynamic>(sql, new { }, _config.GetConnectionString("default"));
     }
+        
+        // UPDATE DATA
+          private async Task UpdateData()
+    {
+        string sql = "update People set FirstName = 'Timothy' where Lastname = 'black'";
+    }
 
 }
