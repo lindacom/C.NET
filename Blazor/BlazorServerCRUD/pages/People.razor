@@ -9,6 +9,8 @@
 
 <h3>People</h3>
 
+<button class="btn btn-primary" @onclick="InsertData">Insert</button>
+
 @if (people == null)
 {
     <p><em>Loading...</em></p>
@@ -24,7 +26,18 @@
 
 @code {
     List<PersonModel> people;
+        
+        // CREATE DATA
+          private async Task InsertData()
+    {
+        string sql = "insert into People (FirstName, LastName) values (@FirstName, @LastName);"
 
+            // wait until it's done and insert specified firstname and lastname
+        await _data.SaveData(sql, new { FirstName = "Billy", LastName = "Jones" }, _config.GetConnectionString("default"))
+    }
+
+        
+        // READ DATA
     protected override async Task OnInitializedAsync()
     {
         string sql = "select * from People";
