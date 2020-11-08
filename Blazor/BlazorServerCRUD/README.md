@@ -1,3 +1,7 @@
+BlazorApp
+==========
+An application to display people from the database. Enables CRUD - create people, read people, update people and delete people. Uses my sql database. Nb. check connection string.
+
 Pages
 ------
 Person.razor - injects data using model, contains sql query and connection string (using iconfiguration which uses the ijson configuration file), loads data into the page
