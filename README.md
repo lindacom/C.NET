@@ -38,4 +38,17 @@ C# classes
 ==========
 Library class
 
+Class properties
+------------------
+N.b. when setting class properties it is not best practice to leave them open e.g. string Name; because there is no encapsulation - anything in the application can get and set them.
+
+You can add an auto property e.g. string Name {get; set; }
+
+Access modifiers
+----------------
+
+Access modifiers can be applied to classes, methods and properties.
+
+public - can be seen outside the class, private - can only be seen in the class, protected, internal
+
 
