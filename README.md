@@ -23,6 +23,8 @@ Using package in your project
 ------------------------------
 1. At the top of the program.cs file enter using <projectname>;
 
+Framework Class Library (FCL)
+=============================
 
 CLR
 ===
