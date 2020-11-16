@@ -54,8 +54,12 @@ Change server name or enter. for localhost and eter database name, id and passwo
 
 Create UI
 -----------
-In the form.cs file click toolbox menu and drag a listbox into the form. In the properties box enter a name for this element.
+1. In the form.cs file click toolbox menu and drag a listbox into the form. 
+2. In the properties box in the right hand side of the screen enter a name for this element.
 
+How to get list of people from database
+=======================================
+Adding tools to the form:
 Add a button.  Double click the button to add an event. e.g. call database and search
 
 Add a class to the project with a method for the data access.
@@ -67,7 +71,7 @@ Add a class to the project with a method for the data access.
         }
  ```
  
- In the form.cs file call the method
+ In the form.cs file call the method and generate a click event
  
  ```
   public partial class Dashboard : Form
