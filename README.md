@@ -24,6 +24,7 @@ Using package in your project
 1. At the top of the program.cs file enter using <projectname>;
 
 .NET consists of CLR (common language runtime) and class library.
+
 Framework Class Library (FCL)
 =============================
 
@@ -32,5 +33,9 @@ CLR
 .NET programmes are executed by the CLR.
 
 JIT (just in time) converts compiled code into machine instructions
+
+C# classes
+==========
+Library class
 
 
