@@ -37,6 +37,32 @@ int.TryParse("12345", out result)
 
 The result true will be returned.  To use the number enter the variable name result.
 
+Using enumerators:
+Enumerators can be used to access variable properties by name rather than position. You declare it with enum keyword followed by ame and values e.g
+
+enum weekDays {Monday, Tuesday, Wednesday, Thursday, Friday};
+var someDay = weekDays.Monday;
+
+Working with dates and times
+----------------------------
+Today's date - DateTie.Now
+Setting a specific date - var birthday = new DateTime(1967, 12, 19);
+
+N.b. you can also add hours, minutes and seconds e.g. new DateTime(1967, 12, 19, 9, 51, 32);
+
+Date calculation
+Subtraction - var difference = DateTime.Now - birthday; 
+Nb. this gives you a timespan object.  To calculate the number of days you can write 
+difference.Days or 
+difference.Days / 365 to get the years
+
+N.b. other formatting options available are .hours, .minutes, .localtime, .ToFielTime
+
+Addition - To add minutes enter
+difference.AddMinutes(134)
+
+
+
 Concatination
 --------------
 There are two different ways to concatinate variables and strings
@@ -55,6 +81,18 @@ var currentDt = DateTime.Now;
 string.Format("Welcome to {0}. The time is {1:t}. The temperature is {2:0.00}.", city, currentDt, temperature)
 
 N.b :t converts the date and time to just display the time. :T would give the longer time format with the seconds on the end. :0.00 formats to two decimal places.
+
+Working with numbers
+---------------------
+To increment a number by more than one use += e.g.
+
+age += 5;
+age -= 4;
+
+You can use the math class to perform calculations. The math class has various functions that can be added to it. e.g. 
+
+To round up - Math.Round(5.2) or Math.Ceiling(5.8)
+To round down - Math.Floor(5.8)
 
 Change text colour in console
 -----------------------------
