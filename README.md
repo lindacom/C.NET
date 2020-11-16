@@ -51,4 +51,31 @@ Access modifiers can be applied to classes, methods and properties.
 
 public - can be seen outside the class, private - can only be seen in the class, protected, internal
 
+Constructors
+----------------
+
+Construcors run immediately when a class is instantiated. Put them after the properties.
+
+public School() {}
+
+You can put arguments inside the construtor
+
+public School() {name = "myschool"; }
+
+You can also pass arguments into the constructor
+
+public School (string schoolName, string schoolNumber) {
+name = schoolName;
+number = schoolNumber;
+}
+
+Methods
+=======
+Properties are used to store data. Methods are used to manipulate the data.
+Nb. if a method does not return any data you can use void instead of return statement
+
+Function bodied expressions can be used for simple returns. use => to indicate what should be returned instead of { return }
+
+
+
 
