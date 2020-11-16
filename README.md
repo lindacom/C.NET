@@ -1,6 +1,7 @@
-.NET consists of CLR (common language runtime) and class library.  You can use an IDE such as visual studio community.
+.NET consists of CLR (common language runtime) and class library.  You can use an IDE such as visual studio community (Install visual studio community from visualstudio.com and create a .NET project) or visual studio code.
 
-Install visual studio community from visualstudio.com
+Create a .NET project in Visual Studio Code
+============================================
 
 CLR
 ===
