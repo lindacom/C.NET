@@ -44,6 +44,14 @@ N.b. when setting class properties it is not best practice to leave them open e.
 
 You can add an auto property e.g. string Name {get; set; }
 
+Class inheritance:
+
+N.b. when several classe will share the same properties you can create a base class (with common properties) and then other classes can inherit from that base class. To inherit from class use : eg.
+
+public class student : person
+
+N.b. Create this base class as an abstract class to prevent developers from directly intantiating the base class
+
 Access modifiers
 ----------------
 
@@ -75,6 +83,35 @@ Properties are used to store data. Methods are used to manipulate the data.
 Nb. if a method does not return any data you can use void instead of return statement
 
 Function bodied expressions can be used for simple returns. use => to indicate what should be returned instead of { return }
+
+Abstract methods
+----------------
+You can create an abstract method within a class when you don't want it to be used directly. 
+
+Abstract methods have to be overritten in subclass. Any class that inherits this class will need to use this abstract method (with code inside the metod).
+
+N.b. you dont put code within the function. e.g.
+
+public abstract float computeAge();
+
+N.b. when the method from the baseclass is used in another class you can use override to override the setting in from the base class.
+
+Virtual methods
+----------------
+ virtual methods can be created in baseclass and used in sub class. Virtual mthods can also be overritten in the subclass.
+ 
+ Interfaces
+ ============
+ Interfaces require a class to implement certain properties and methods (similar to abstract class).  Objects can use multiple interfaces but they can only inherit from one class.
+ 
+ 1. Right click on library class > add > new item
+ 2. Find interface in the list
+ 3. Enter a name for the interface best practice is to start with an I e.g. IScored.
+ 4. Define properties that you want to appear on the objects taht use this interface N.b no code just structure
+ 
+ To use an interface use : after the class name e.g. public class Science : IScored 
+ 
+ You can use more than one interface by separating them with a comma.  N.b you can have base class and interface together separated by comma.
 
 
 
