@@ -1,4 +1,4 @@
-.NET consists of CLR (common language runtime) and class library.  You can use an IDE such as visual studio community (Install visual studio community from visualstudio.com and create a .NET project) or visual studio code.
+You can use an IDE such as visual studio community (Install visual studio community from visualstudio.com and create a .NET project) or visual studio code.
 
 Create a .NET project in Visual Studio Code
 ============================================
@@ -23,6 +23,7 @@ Using package in your project
 ------------------------------
 1. At the top of the program.cs file enter using <projectname>;
 
+.NET consists of CLR (common language runtime) and class library.
 Framework Class Library (FCL)
 =============================
 
