@@ -25,6 +25,16 @@ Using package in your project
 
 .NET consists of CLR (common language runtime) and class library.
 
+Adding packages in Visual studio
+==================================
+Browse packages:
+
+www.nuget.org shows package registry of available packages.
+
+Install a package
+
+Tools > nuget package manager > manage nuget packages.  Here you can search for and install a package.
+
 Framework Class Library (FCL)
 =============================
 
@@ -156,6 +166,80 @@ Virtual methods
  6. Run test - test > run > all tests.  A test explorer window will open showing pass and fails.  Click to see details of test.
  
  N.b. classes need to be public to allow you to test them outside of the project.
+ 
+ Testing code you are working on in vidual studio
+ ==================================================
+ To load assembly:
+ 
+ 1. view > other windows > C# interactive
+ 2. Right click project and select open folder in file explorer
+ 3. Go to bin folder (this folder contains compiles)
+ 4. Find dll file and copy the path
+ 5. In C# interactive enter #r and filepath followed by \ and then select dll from the list
+ 
+ To access the assembly:
+ 
+ In C# interactive type namespace.classname
+ 
+ N.b. if you cannot see class in the list mae it public and then rebuild project and then run command in C# interactive again.
+ 
+ To test code:
+ 
+ Enter code in C# interactive
+ 
+ ```
+ var test = new namesace.class();
+ test.methodname()
+ ```
+ The result is returned in the interactive screen.
+ 
+ Managing flow of a loop with break and continue:
+ 
+ ```
+ if(word.StartsWith("M")) continue;
+ if(word.StartsWith("C")) break;
+```
+
+Continue - skips entry and runs the loop
+break - exists the lop and does not execute anything below it.
+
+Exception handling
+===================
+Compiler exception - when a syntax error is made for example and the compiler catches it.
+run time exception - error in the code which cannot be caught by the compiler.  The error only displays when you have run the application.
+
+Debugging
+----------
+
+Debugging exeptions in your code:
+
+1. put a break point in the code where you want to stop
+2. In the pane inspect values of variables
+
+Available debuger tools are step into, step over, step out and continue.
+
+Continue - Keep clicking continue and watch values change until you reach an exception. Fix the code and then save and run again.
+
+Using try catch statement:
+
+Writing cod with try catch tries to run code and catches exceptions.  This is useful for reading files for example.
+
+N.b. you can use multiple catch statemets to catch particular exceptions.
+
+N.b. you can use finally block that runs no matter what.
+
+Getting a project ready for production
+======================================
+1. To the left of the start button change the dropdown from debug to release so that you can build to release
+2. In the menu select build > build solution
+3. Right click project and then select open file explorer > bn > release - all program deliverables are in this folder
+4. Copy program files
+
+Settings
+---------
+project > project properties - here you can set assembly information, title and description for the project.
+
+
 
 
 
