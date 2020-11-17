@@ -94,6 +94,46 @@ You can use the math class to perform calculations. The math class has various f
 To round up - Math.Round(5.2) or Math.Ceiling(5.8)
 To round down - Math.Floor(5.8)
 
+Flow control
+=============
+
+Evaluationg conditions
+------------------------
+
+Alternate if/else formats:
+
+```
+public bool myColor(string color) {
+   if color.ToLower() == "red") {
+       result = 'primary'
+       } else {
+       }
+```
+
+The ternary operator:
+
+return (color.ToLower() == "red") ? true:false;
+
+Switch statemets:
+
+```
+public string secondaryOrPrimary(string color) {
+   var result = "";
+   switch(color.ToLower()) {
+     case "red" : result = "primary";
+     break;
+     case "blue" : result = "primary";
+     break;
+     }
+     return result;
+     }
+```
+
+N.b. at the end of the cases you can add a default for it none of the colours match 
+
+default: result = "secondary";
+break;
+
 Change text colour in console
 -----------------------------
 Console.ForegroundColor = ConsoleColor.Green;
@@ -120,7 +160,7 @@ To put input into the guess variable as an integer
 
 guess = Int32.Parse(input);
 
-Generate a random numbr
+Generate a random number
 -------------------------
 You can generate a random number using the random object new Random()
 
@@ -129,6 +169,109 @@ To generate a random number between one and ten
 Random random = new Random();
 
 int correctNumber = random.Next(1, 10);
+
+Arrays and colections
+=============================
+Arrays
+------
+Arrays are indicated y square brackets. You need to specify type. Arrays have a fixed size which is set when you create the array.  Arrays contain positions. 
+
+N.b. you cannot mix types in an array
+
+To create an array enter the following in a method:
+
+```
+var groceryList = new string[3];
+
+groceryList[0] = "milk";
+groceryList[1] = "cheese";
+groceryList[2] = "Apples";
+
+```
+
+N.b. to make the array available enter public string [] groceryList outside of the method.
+
+To crate an array and fill it at the same time:
+
+var groceryList = new string [3] {"milk", "chese", "apples"}
+
+To get items in the array by index:
+
+groceryList[2]
+
+To resize the array:
+
+array.Resize(ref groceryList, 6);
+
+You can then add more items to the array. N.b. ref you can get a variable by reference.
+
+Multidimensional array
+-----------------------
+
+To create an array with three rows and four values(coluns similar to a spreadsheet):
+
+```
+var multi = new int[3,4] {
+{0, 1, 2, 3}
+{4, 5, 6, 7}
+{8, 9, 10, 11}
+};
+```
+
+You can access the multi array by row and position e.g multi [2,3] will return 11.
+
+Lists
+-----
+No need to specify size. Uses system.collection.gneric. Before method ener public List<string> sauces{get; set;}
+  
+To create a list:
+
+var awesomeSauces = new List<string>();
+  
+To add to list:
+
+awesomeSauces.add("tobasco");
+
+To get an item
+
+awesomeSauces[0]
+
+N.b. you can also sort (sort() to sort alphabetically) and reverse items in a list.
+
+Linq
+----
+Language integrated query - to operate on lists and collections
+
+.sum()
+.Average()
+.Where(item -> item >=3) - this will return items in list that are greater or equal to three
+
+Dictionary
+-----------
+Need to specify type of key and type of value. Keys must be unique. Uses key value pairs.
+
+To create a dictionary:
+
+var dictionaryWords = newDictionary<string, sring>();
+
+To add to dictionary:
+
+dictionaryWords.Add("var", "shorthand for variable");
+
+To access dictionary item by key:
+
+dictionaryWords["var"]
+
+To count items in a dictionary:
+
+dictionaryWords.count
+
+To return all keys in a dictionary:
+
+dictionaryWords.keys
+  
+
+
 
 Tutorials
 ==========
