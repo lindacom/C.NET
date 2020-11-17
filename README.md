@@ -112,6 +112,50 @@ Virtual methods
  To use an interface use : after the class name e.g. public class Science : IScored 
  
  You can use more than one interface by separating them with a comma.  N.b you can have base class and interface together separated by comma.
+ 
+ Unit testing
+ ==============
+ Test driven development (TDD)
+ ------------------------------
+ 
+ 1. Create or change code
+ 2. Create a repeatable test
+ 3. Review the results
+ 
+ Test all methods in your code
+ Can be automaed as part of continuos integration (CI) process using a tool like Jenkins.
+ 
+ To write a unit test in visual studio:
+ 1. Create a class library
+ 2. Crate new test project - C# > test > unit test project
+ 
+ N.b. to add more tsts go to add new item > test > basic unit test
+ 
+ 3. Write a test in unit test1.cs file. Using class library use assert statement to verify actual results copared to test results.
+ 
+ ```
+ public void testMethod1() {
+    var testInstance = new class1();
+    var testResult = testInstance.AddTwo(9, 5);
+    Assert.AreEqual(testResult, 14, 'I expected 14');
+    }
+ ```
+ 
+ N.b. to test an array length - Assert.AreEqual(testInstance.grocerList.length, 4)
+ to test array position - Assert.AreEqual(testInstance.grocerList[1], "milk")
+ 
+ 4. In class1.cs file enter methods
+ 
+ ```
+ public int AddTwo(int a, int b) {
+    return a+b;
+    }
+ ```
+ 
+ 5. Save all files
+ 6. Run test - test > run > all tests.  A test explorer window will open showing pass and fails.  Click to see details of test.
+ 
+ N.b. classes need to be public to allow you to test them outside of the project.
 
 
 
