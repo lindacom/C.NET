@@ -6,6 +6,10 @@ Objects can have properties and methods that can be attached to it.
 
 e.g. name.ToUpper();
 
+Rucursion
+----------
+A method that calls itself.
+
 Declaring variable
 ------------------
 Declare variable by prefixing it with the type e.g. 
@@ -263,6 +267,20 @@ Language integrated query - to operate on lists and collections
 .sum()
 .Average()
 .Where(item -> item >=3) - this will return items in list that are greater or equal to three
+
+Filter data using system.linq
+-------------------------------
+
+```
+public static string filename  @"c:\users\text.txt";
+
+var start = "";
+var end = "";
+
+using (var text = new StreamReader(filename) {
+var data = mydata.ReadRange(text, start, end);
+}
+```
 
 Dictionary
 -----------
