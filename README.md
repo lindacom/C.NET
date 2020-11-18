@@ -35,6 +35,10 @@ Install a package
 
 Tools > nuget package manager > manage nuget packages.  Here you can search for and install a package.
 
+Project solution structure in visual studio
+===========================================
+divide projects in the solution by class library, unit tests and project
+
 Framework Class Library (FCL)
 =============================
 
