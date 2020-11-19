@@ -305,8 +305,71 @@ dictionaryWords.count
 To return all keys in a dictionary:
 
 dictionaryWords.keys
-  
 
+Algorithms
+============
+An algorithm is a self contained sequence of actions that solve a task e.g performing calculations, data processing automated tasks. The various types of algorithms are:
+1. Linked lists
+2. Stack
+3. Queue
+4. Binary search
+5. Linear search
+  
+Linked lists
+--------------
+There are many types of lined lists
+
+singly linked list:
+Adding items to beginning or end of list.
+
+1. Create class
+2. Create node class. In the node class enter data and then add node class ( to make it recursive)
+3. Display content
+
+Stack
+-----
+A stack is an abstract data type that serves as a collection of elements (things piled on top of each other). Two operations are push and pop.
+
+push - add element to collection
+pop - remove ost recently added item (last in first out)
+
+To create a stack algorithm:
+1. Create a class
+2. In the class define variables e.g. max size, array, index of last position
+3. Create constructor with settings eg. max size, array and index of last position settings
+4. Create push method that takes in parameters. Check if array is full else add to array
+5. Create pop method. Check if it is empty else remove one and return stack array
+
+N.b .NET has methods that automatically write this algorithm - .Push() and .Pop() and .Peek which you can use instead of writing your own algorithm
+
+Queue
+------
+Similar to stack a queue is a data structue that serves as a collection of elements. Two features - enqueue and dequeue (firt in first out)
+
+To create  queue algorithm:
+1 Create class with variables
+2. Create a constructor
+
+N.b. .NET has the .Enqueue() and .Dequeue() methods.
+
+Binary search
+-------------
+Binary search finds the positio of a target value within a sorted array.  It continuously compares the target value to the middle element of the array and eliminates irrelevant
+half of the array.  The search continues on the remaining half until value is found or it confirms that the value does not exist.
+
+To create a binary search algorithm:
+1. Create a function that accepts parameters
+2. Set start to 0
+3. Set end to n (length of array)
+4. While start <= end /2 (to find the mid point)
+5. If value < start (midpoint) then set end = mid -1 (to find the next new midpoint)
+6. Else if value > array midpoint (to know whether to eliminate left or right side)
+
+Linear search
+--------------
+Linear search searches the target value wthin a list.  It checks each element until the target is found (or no results). This type of search is less efficient
+
+N.b  .NET has .IndexOf() method which searches for an object and returns index of the first item it finds.
 
 
 Tutorials
