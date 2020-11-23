@@ -73,6 +73,39 @@ DTO object
 DTO object = data transfer object (inputs and outputs for api endpoints)
 This is an alternative to using data entities so you only send fields you need
 
+1. Create a folder called DTOs 
+2. create a class called SearchRequestDto. The namespace will be the project name.dtos folder.
+3. Create proerties in the class e.g. min and max pric
+
+```
+namespace myProject.DTOs {
+public class SearchRequestDto {
+   public decimal MinPrice {get; set; } = decimal.MinValue;
+   public decimal MaxPrice {get; set; } = decimal.MaxValue;
+   }
+   {
+```
+4. In the method of the main class create a method that takes DTO as a parameter
+
+```
+public List <tour> PostSearch (SearchRequestDto request) {
+var query = context.Tours.AsQueryable()
+.where(i =>Price >= request.MinPrice && i.Price <= request.MaxPrice)
+return query.ToList();
+}
+```
+
+In postman make a post request and enter properties e.g. min and max price in the body tab.
+
+N.b. to edit a record add the id in the parameter of the method e.g put(int id, Tour tour)
+and in postman make a put request with the id in the url and properties in the body tab.
+
+Put one of the followng in the parameter of a method 
+[fromody]
+[fromUri]
+
+e.g. pubblic List <tour>PostSearch([fromBody]SearchRequestDto request) to make it specific where the query parameters are to come from.
+
 Testing controller actions in Postman
 --------------------------------------
 The controller file contains get, post, put, patch and delete actions.
