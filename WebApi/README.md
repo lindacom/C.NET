@@ -134,6 +134,22 @@ public class myController : ApiController {
 1. Run the project
 2. In postman access the url using the various actions.
 
+api testing in postman
+=========================
+Workspace - create different settigs for different projects/clients
+Click workspace dorpdown to create new workspace
+Cick the eye icon to create globl variables to use throughout apis e.g. using same email for all api calls. To use it in body or url use {{email}}
+
+N.b. the eye icon alays allows you to create environments.
+
+In the tests tab you can write JavaScript code to run after call has been made.
+
+You can set up a proxy server in postman
+
+You can shar collections with others, click get link
+
+You can use postman to mock a service that does not exist
+
 http verb attributes
 -------------------
 In the name of the method in the controller file you need to include the http verb (get put delete etc) however web api allows you to target a http verb for a method without needing to use it in the name of the method
@@ -179,6 +195,21 @@ N.b. There are many built in Data Annotations validation attributes
 Json.NET
 =========
 Json.net is a serialisation library that web api uses by default.  Json.net has various settings
+
+Json web tokens (JWT)
+=======================
+1. header
+2. payload
+3. signature
+
+header - metadata abut token
+paylod - information of he token e.g. expiry, user, role
+signature - makes JWT secure.  Header and payload hash using secret key to get signature
+
+To use JWT:
+1. submit credentials e.g. app id and password to unsecured endpint in the api to verify them
+2. endpoint verifies credential (e.g. from data store) and issues token in response body
+3. For each subsequent request to secure endpoint token will be sent in header as type token e.g Authorization: Bearer <token>
 
 Parse json response with JArray 
 -----------------------------------
@@ -250,6 +281,14 @@ To create a controller:
 2. Select web api2 controller with actions using entity framework and click add
 3. Select model class data context is selected already Check use asynchrynous controller actions
 4. Click add
+
+api security
+============
+Secure an endpoint with the authorise attribute in web api.
+
+1. In controller add [authorize] attribute before the class - secures all access to the class
+
+To make exception for one or two methods enter [allowAnonymous] in front of the method
 
 Documenting and testing your api
 =================================
