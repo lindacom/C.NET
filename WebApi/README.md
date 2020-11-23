@@ -108,7 +108,9 @@ e.g. pubblic List <tour>PostSearch([fromBody]SearchRequestDto request) to make i
 
 Testing controller actions in Postman
 --------------------------------------
-The controller file contains get, post, put, patch and delete actions.
+The controller file contains get, post, put, patch and delete actions. 
+
+
 
 ```
 public class myController : ApiController {
@@ -132,6 +134,52 @@ public class myController : ApiController {
 1. Run the project
 2. In postman access the url using the various actions.
 
+http verb attributes
+-------------------
+In the name of the method in the controller file you need to include the http verb (get put delete etc) however web api allows you to target a http verb for a method without needing to use it in the name of the method
+
+1. In the controller use the http attribute before the method
+
+[httpPost]
+puboic List <tour>SearchTour([fromBody]SearchRequestDto request)
+
+2. In postman do a post request
+
+N.b. if you are using a non-standard verb, the accept verbs attribue allows you to list them for use e.g. 
+
+[AcceptVerbs("flag", "fly")]
+public void myAction() {
+}
+
+Return values
+-------------
+Returning data from pi. Return types:
+
+1. return void - returns nothing
+2. return HttpResponseMessage
+3. return IHttpActionResult
+4. return objects as a list of objects
+
+To use return values:
+1. Implement api controller
+2 Before the method enter [httpPost]
+3. In the method use IHttpAction result e.g.
+
+Public IHttpActionResult SearchTours([fromBody]TourSearchRequestDto request)
+
+N.b. in the method you can use return helper ethods eg BadRequest()
+
+Validating models
+==================
+Uses attributes from System.ComponentModel.DataAnnotations namespace to mark up models or tos.
+Asks asp.net to validate them using the model state property of the controller base class - base.ModelState.IsValid
+
+N.b. There are many built in Data Annotations validation attributes
+
+Json.NET
+=========
+Json.net is a serialisation library that web api uses by default.  Json.net has various settings
+
 Parse json response with JArray 
 -----------------------------------
 Install the newtonsoft json package
@@ -144,6 +192,19 @@ var id = (string) face ['faceid'];
 }
 }
 ```
+
+Using formats other than Json
+===============================
+Built in web api xml serialisers:
+xml serializer
+DataContract Serializer - newer and faster however you need to mark all fields to be serialised
+
+To use xml serializer:
+1. In the web api configuration method enter
+config.Formatters.xmlFormatter.use xmlSeializer = true
+2. in postman in the headers tab change content type and accept field to application/xml
+
+Results are returned as xml instead of json
 
 Get a list from a database
 ==========================
@@ -159,4 +220,51 @@ public List<tour> Get() {
 
 1. Start project
 2. Make get request in postman.
-Results should be returne
+Results should be returned
+
+Attribute routing
+=====================
+Instead of changing the ai config fil you can create inline attribute routing  To enable routing by attribute
+1. Before the method enter e.g
+[Route("api/tour{id:int})] - this path must match an integer
+or
+[Route("api/tour/{name}")]
+
+N.b. you can use e.g. (RoutePrefix("api/tour")] so that all routes in the file will use the prefix
+
+N.b. if you co not want to use the prefix for one or more methods you can escape the prefix using a tide symbol ~ before the uri (route string)
+
+Data serialisation and model binding
+========================================
+models and Dtos
+------------------
+Sending and receiving an object that represents a row in the database (serialised and deserialised between and object in json)
+
+client app -> rest call -> api app -> orm call -> database
+
+Dto - transporting data in and out of api.  Include only objects you need.  DTOs are better for performance and security.
+Model - exposes all CRUD operations
+
+To create a controller:
+1. Go to controllers > add > controller
+2. Select web api2 controller with actions using entity framework and click add
+3. Select model class data context is selected already Check use asynchrynous controller actions
+4. Click add
+
+Documenting and testing your api
+=================================
+You can create automated documentation for api.
+
+1. In visual studio use // to create an xml comment in the file
+2. Go to properties > build
+3. Check xml documentation file (compiler creates api documentation)
+4. Open nuget package manager. Install microsoft.aspNet.webapi.helppage to project
+5. In the global.asax file enter areaRegistration.RegisterAllAreas(); in the application start method
+6. In the helperPageConfig.cs file uncomment configsetDocumentationProvider and change xm filename
+
+When you launch site compiler provides help file at the url /help
+
+N.b. you can alternatively document your api using swagger  Install swashbuckle.core nuget package.
+
+
+
