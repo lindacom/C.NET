@@ -66,6 +66,16 @@ public class student : person
 
 N.b. Create this base class as an abstract class to prevent developers from directly intantiating the base class
 
+Abstract classes:
+
+Abstract classes allow you to have an abstract function that can override or implement in the class that uses it. To create a abstract class with a property:
+
+```
+public abstract class Answer {
+  public int Score { get; set; }
+  }
+```
+
 Access modifiers
 ----------------
 
@@ -76,9 +86,13 @@ public - can be seen outside the class, private - can only be seen in the class,
 Constructors
 ----------------
 
-Construcors run immediately when a class is instantiated. Put them after the properties.
+Constructor is a method in  class that is executed when an instance of the class is created. Construcors run immediately when a class is instantiated. Put them after the properties.
 
+A default constructor has the same name as the class. e.g
+
+public class School() {
 public School() {}
+}
 
 You can put arguments inside the construtor
 
@@ -90,6 +104,28 @@ public School (string schoolName, string schoolNumber) {
 name = schoolName;
 number = schoolNumber;
 }
+
+Constructor with parameters:
+
+You can create another constructor and pass in parameters (with type) to the constructor.  Create properties ad assign values to the property from the parameter.
+
+Constructor chaining:
+
+Constructor chaining using :this() keyword. Chai the constructor with the default constructor e.g
+
+```
+public class School {
+  
+  public School() {
+    Console.WriteLine("a school");
+    }
+    
+    public School (string schoolName):this() {
+    SchoolName = schoolName;
+    }
+  
+  }
+```
 
 Methods
 =======
@@ -113,6 +149,27 @@ N.b. when the method from the baseclass is used in another class you can use ove
 Virtual methods
 ----------------
  virtual methods can be created in baseclass and used in sub class. Virtual mthods can also be overritten in the subclass.
+ 
+Inheritance
+==============
+Inheritance is used to remove duplicate code.  The symbol : indicates inheritance. 
+
+1. Create a class of shared properties. N.b. must be public or protected because private does not work with inherited classes
+
+```
+class member {
+  public string name
+  public string address;
+  }
+```
+
+2. Create a class that inherits from the class
+
+```
+class student : member {
+
+}
+```
  
  Interfaces
  ============
