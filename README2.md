@@ -196,15 +196,20 @@ Arrays and colections
 =============================
 Arrays
 ------
-Arrays are indicated y square brackets. You need to specify type. Arrays have a fixed size which is set when you create the array.  Arrays contain positions. 
+Arrays are indicated by square brackets. You need to specify type. Arrays have a fixed size which is set when you create the array.  Arrays contain positions. 
 
 N.b. you cannot mix types in an array
+
+Array example
+------------------
 
 To create an array enter the following in a method:
 
 ```
+// create new instance of the array
 var groceryList = new string[3];
 
+// add items to the array
 groceryList[0] = "milk";
 groceryList[1] = "cheese";
 groceryList[2] = "Apples";
@@ -219,13 +224,20 @@ var groceryList = new string [3] {"milk", "chese", "apples"}
 
 To get items in the array by index:
 
-groceryList[2]
+groceryList[2] or
+Console.WriteLine(groceryList[2]);
 
 To resize the array:
 
 array.Resize(ref groceryList, 6);
 
 You can then add more items to the array. N.b. ref you can get a variable by reference.
+
+To access all items in the array you can use a for each loop. e.g.
+
+foreach (var grocery in groceryList) {
+   Console.WriteLine(grocery);
+   }
 
 Multidimensional array
 -----------------------
@@ -284,7 +296,7 @@ var data = mydata.ReadRange(text, start, end);
 
 Dictionary
 -----------
-Need to specify type of key and type of value. Keys must be unique. Uses key value pairs.
+A dictionary Uses key value pairs. Need to specify type of key and type of value. Keys must be unique. 
 
 To create a dictionary:
 
@@ -300,11 +312,22 @@ dictionaryWords["var"]
 
 To count items in a dictionary:
 
-dictionaryWords.count
+dictionaryWords.count or
+Console.WriteLine("Count: {0}", dictionaryWords.Count);
 
 To return all keys in a dictionary:
 
 dictionaryWords.keys
+
+To find an item in the dictionary by key:
+
+Console.WriteLine("Keyvalue:{0}, dictionaryWords["var"]);
+
+To search for an item in the dictionary by either key or value:
+
+Console.WriteLine(dictionaryWords.ContainsKey("var");
+Console.WriteLine(dictionaryWords.ContainsValue("shorthand for variable");
+
 
 Algorithms
 ============
@@ -370,6 +393,41 @@ Linear search
 Linear search searches the target value wthin a list.  It checks each element until the target is found (or no results). This type of search is less efficient
 
 N.b  .NET has .IndexOf() method which searches for an object and returns index of the first item it finds.
+
+While loop example - authentication
+====================================
+```
+static void Main(string[] args) {
+  var code = "";
+  while code != "secret") {
+     Console.WriteLine("what is the passcode?");
+     code = Console.ReadLine();
+     
+     if (code != "secret") {
+       Console.WriteLine("not authenticated");
+       }
+       
+       }
+       Console.WriteLine("authenticated);
+       }
+```
+
+For loop example - counting
+=============================
+Counting up
+------------
+```
+for (int i=1; i<=10; i++) {
+  Console.WriteLine(i);
+  }
+```
+Counting down
+----------------
+```
+for (int i=10; i>=1; i--) {
+  Console.WriteLine(i)
+  }
+```
 
 
 Tutorials
