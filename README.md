@@ -52,6 +52,22 @@ C# classes
 ==========
 Library class
 
+Define a program class
+-------------------------
+The program class is the entry point to the application so should contain a static main method.
+
+```
+using System;
+using System.Collections.Generic;
+
+public class Program {
+  public static void Main() {
+  }
+  }
+```
+
+N.b. a static method can be called without instantiating an object therefore Main() needs to be static in order to allow it to be the entry to the application.
+
 Class properties
 ------------------
 N.b. when setting class properties it is not best practice to leave them open e.g. string Name; because there is no encapsulation - anything in the application can get and set them.
@@ -126,6 +142,44 @@ public class School {
   
   }
 ```
+
+Instance
+---------
+To create a new instance of animal class called dog:
+
+```
+public class Animal {
+}
+
+public class Program {
+   public static void Main() {
+      Animal dog = new Animal ();
+      }
+   }
+```
+
+
+
+Declaring variables 
+===================
+Declaring a string
+------------------
+```
+public static void Main() {
+   string name = "John";
+   }
+```
+
+Declaring an integer
+---------------------
+```
+public static void Main() {
+   int age = 30;
+   
+  }
+```
+
+
 
 Methods
 =======
