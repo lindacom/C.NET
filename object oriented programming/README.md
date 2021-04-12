@@ -7,6 +7,10 @@ A class can contain methods (functions) which defines behaviour e.g. add, cancel
 protected - this class and children can access the class. Manipulate objects of attribute only in certain ways.  Using protected provides more controle over access.
 This is known as encapsulation - preventing data inside object bein manipulated.
 
+Data types
+----------
+Built in data types include string, decimal, integer, double, bool
+
 Inheritance
 -------------
 A class can inherit from other classes (sub classing) using extends. This is useful for when properties are not standard.
@@ -66,4 +70,12 @@ catch - throw exception
 
 enables you to echo a message
 exception can also be wrapped in an if statement for example if you wnt to restrict the number of add for instances of methods you can throw a message.
+
+Testing
+=======
+Write code to test code in  proect.
+In a visual studio code project right click the solution and select add new project.  Then select XUnit test project(.net core)
+write code
+go to build > build solution
+go to test > run all tests.  The test explorer will open
 
