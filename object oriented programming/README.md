@@ -4,7 +4,8 @@ A class describes the object - attributes e.g. speed, reg, make
 A class has properties (protected, public, private)
 A class can contain methods (functions) which defines behaviour e.g. add, cancel, accelerate, break
 
-protected - this class and children can access the class
+protected - this class and children can access the class. Manipulate objects of attribute only in certain ways.  Using protected provides more controle over access.
+This is known as encapsulation - preventing data inside object bein manipulated.
 
 Inheritance
 -------------
@@ -14,12 +15,34 @@ Abstract classes
 ------------------
 An abstract class can contain base for a sub class
 
+Relationships
+---------------
+Aggregation - e.g. car and engine. An engine is fundamental part of the car
+
+Anthropomorphism
+---------------
+Anthropomorphism is giving human characteristics to inanimate objects
+
+Interface
+------------
+A class can use an interface.  An interface is used when classes share common bhaviour but no obvious superclass.
+
+An interface defines capability - what an object can do.  An interface is created using the : symbol
+
 Objects
 ==========
 1. An object is  name e.g car
 2. An object is based on a class
 3. Each instance of a class
 4. An object can be built using a constructor, passing arguments in and using the new keyword.
+
+To create a new object write:
+
+```
+Account myAccount = new Account();
+
+```
+then enter myAccount. to access the attributes of the account class 
 
 Constructors
 -------------
