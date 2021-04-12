@@ -1,7 +1,8 @@
 Classes
 =======
+A class describes the object - attributes e.g. speed, reg, make
 A class has properties (protected, public, private)
-A class can contain methods (functions) e.g. add, cancel
+A class can contain methods (functions) which defines behaviour e.g. add, cancel, accelerate, break
 
 protected - this class and children can access the class
 
@@ -15,8 +16,10 @@ An abstract class can contain base for a sub class
 
 Objects
 ==========
-Each instance of a class
-An object can be built using a constructor, passing arguments in and using the new keyword.
+1. An object is  name e.g car
+2. An object is based on a class
+3. Each instance of a class
+4. An object can be built using a constructor, passing arguments in and using the new keyword.
 
 Constructors
 -------------
