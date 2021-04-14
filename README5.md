@@ -6,12 +6,39 @@ Console.ReadLine();
 
 Encapsulation - information hiding
 
+passing data - assigning one value to another creates a copy. If the origina changes it does not affect the other.  Assignment copies reference not the content and the 
+reference then accesses the content.
+
+type of operator - tells the method the type of the object
+
+protected - accessible only to inherited types otherwise its private
+virtual - set a function to irtual to create a v table lookup of functions that can be calledin a class e.g. for properties that should be overwritten
+abstract classes - can have same properties and methods and you can indicate properties/methods are abstract
+can't just inherit functionality, you need to implement it.
+
+Inheritance
+===========
+base class - e.g. car. with methods and properties eg. max speed property, speed property and accelerate method
+derived class e.g racing car inherits from base class and may have its own attributes
+
+show inheritace e.g use: car can also override some properties from base class e.g. base.maxspeed this will return the max speed set in the base class
+
+N.b. constructors are not inheritaed therefore you need to create an inheritance relationshp
+
 Static function 
 ---------------
-Static functio - function belongs to the class. e.g. static void main. To use it you do not need to create an instance of it to run it. 
+Static function - function belongs to the class. e.g. static void main. To use it you do not need to create an instance of it to run it. 
 You use e.g program.main();
 
 To access static functions you need to create static variables. N.b. if it does not say static it belongs to member function.
+
+Static methods
+--------------
+static methods belong to a class therefore you do not need to create an instance of it to use it. 
+
+Static constructor
+---------------------
+a static constructor runs once e.g. look up and set an exchange rate
 
 Function polymorphism
 ------------------------
@@ -68,6 +95,36 @@ N.b. you canot assign a hgh value bit iteger to a smaller one eg 16-bit to 8 bit
 
 n.b. putting a M after literal values will return a decimal e.g. 0.1M + 0.2M will return 0.3
 
+Types
+-----
+Value types - decimal, bool, int ad float.  Value types are based on a strut. value types do not support inheritance. you can check equality using Equals
+e.g. (r1.Equals (r2).  To write your own value type you declare it as a struct (similar to how a class is set up). nullable value types - put a ? aftr type 
+allows null state e.g double ? diamond = null;
+
+Enums - enum is a user defined value type.  it is a definition of possible values. an enum can be declared as a data type e.g.
+
+```
+public enum Fueltype {
+petrol, 
+diesel, 
+electric
+}
+```
+
+N.b behind the scenes the data is given an id (0, 1, 2 etc) then to use it 
+
+```
+public Fueltype Fuel {get; set;}
+
+car c = new Car() {
+Fuel = FuelType.Electric
+}
+```
+
+reference types - string and list.  Reference types are based on a class. Reference types do not check same content they only check reference.
+
+
+
 Properties
 -----------
 
@@ -95,6 +152,9 @@ public car (string reg) : this (reg, "", "") {
 
 This is called constructor chaining.  The first constructor will construct the oject.
 
+Generics
+============
+
 Array
 -----
 
@@ -108,7 +168,21 @@ N.b. you cannot add and remove elements from the array You need to use the resiz
 Array.Resize<int>(ref names, 20)
   
 2. Lists
-3. Array lists
+
+uses system.collections.generic and allows you to create a list
+
+```
+List<int> age
+```
+
+you specify the type of list to use e.g. a list of inteers.  You then get the items by index position
+4. Array lists
+
+Uses system.collections and allow you to create array list. Arrays are fixed size, array list has functios tha t enables add, remove, clear, check contains etc.
+
+```
+names.Add("Fred")
+```
 
 variable scope
 -------------
@@ -139,6 +213,53 @@ the order is left to right
 
 e.g. 2 + 5 * 3 = 17
 (2+5) * 3 = 21
+
+Storage/memory
+--------------
+stack - temporary store of data e.g when a function is executing. Limited sie therefore value types need to be small
+heap - limitless. Can grow to fill memory of machine
+Statics - stores static classes data and variables. Statics are held for the duation of the execution of the application
+
+Ref and out
+----------
+
+ref - pass by refernece. can be changed 
+
+when you pass an argument to a parameter you are copying the argument. It does not affect the original. e.g
+
+```
+static void Main (string[] args) {
+DoSomething(x)
+}
+
+static void DoSomethig(int y) {
+y = 99;
+}
+```
+This is the same as y= x and then y = 99.
+
+
+Nb if you want to change the original then use passing by refernce -
+declare the parameter as a ref parameter and in the function call e.g.
+
+```
+static void DoSomething(ref int y) {}
+
+```
+
+Y is ow a refeece variable.
+
+N.b. alternatives to references are in and out
+
+in - in only outside function. cannot be assigned ithin the function
+
+out - enforces requirement for y parameter variable to be initialised inside the called function
+
+Parcial classes
+--------------
+
+partial classes can be written over seperate files. Use the same class name they will be compiled together as one class. Partial classes are used to split
+a large complicated class
 
 
 
