@@ -18,12 +18,52 @@ can't just inherit functionality, you need to implement it.
 
 Inheritance
 ===========
+Anything that 'is a' is an inheritance e.g racing car IS A car.
+
+The benefits of inheritance is that code reuse, ope closed (ability to extend an app without rewriting code, LISKOV, sincle responsibility)
+
 base class - e.g. car. with methods and properties eg. max speed property, speed property and accelerate method
-derived class e.g racing car inherits from base class and may have its own attributes
+derived class - e.g racing car inherits from base class and may have its own attributes
+
+Use override, protected, abstract and/or virtual on the class.
+
+virtual - is available in the v lookup table. Also maes method able to be rewritten in derived class
+protected - variable and fields are private but can only be accessed by inherited classes
+abstract - base class is marked as abstract. Implementation not done in the base class it has to be overwritten in the derived class
+sealed - can no longer be inherited from.
 
 show inheritace e.g use: car can also override some properties from base class e.g. base.maxspeed this will return the max speed set in the base class
 
-N.b. constructors are not inheritaed therefore you need to create an inheritance relationshp
+N.b. constructors are not inheritaed therefore you need to create an inheritance relationship
+
+Interfaces
+==========
+A contract. Describes capabilities that 'things' need to have e.g. play, record, pause, stop, rewnd, fast forward. An interface is similar to an abstract class.
+
+The benefits of an interface is that it allows for the definition of a code contract and enables decoupling e.g. changing parameter from a class to an interface parameter
+i.e. works ith any object that implements the interface
+
+A class can implement multiple interfaces by comma seperating them.
+
+An interface can inherit from another interface
+
+Interfaces should be as small as possible e.g. because a large interface may contain some methods that are not needed in some instances
+
+
+The naming convenstion is to put an I in front of the interface name e.g. IAccelerable
+
+```
+public interface IAccelerable {
+}
+```
+
+define properties and methods in the interface e.g max speed, speed, accelerable (int)
+
+When creating a class to use the interface indicate that the interface is being implemented and provide implementations for the methods
+
+N.b. classes can be unrelated to each other but all use the same interface therefore having the same capabilities.
+
+One issue is if a class implements two interfaces and the two interfaces have a common method it is not clear what is being returned by each.  To resolve this you can prefix the methods with an id e.g. cs.Draw(); and id.Draw();
 
 Static function 
 ---------------
@@ -184,6 +224,24 @@ Uses system.collections and allow you to create array list. Arrays are fixed siz
 names.Add("Fred")
 ```
 
+LINQ
+====
+linq enables querying of e.g. lists, array, dictionaries using the foreach statement and extension methods - average, contains, count, sum etc.
+
+e.g. numbers = {1,2,3}
+decimal total = numbers.sum()
+
+LINQ builds on top of the IEnumberable interface.
+
+N.b. by adding entity framework you can also query databases.
+
+To ue linq with a lambda function use an aggregator e.g.
+
+new employee { first = "mary", last = "jones", age = 21}
+new employee { first = "tom", last = "cooper", age = 14}
+
+double total = employees.Average(emp => emp.age);
+
 variable scope
 -------------
 
@@ -260,6 +318,32 @@ Parcial classes
 
 partial classes can be written over seperate files. Use the same class name they will be compiled together as one class. Partial classes are used to split
 a large complicated class
+
+Dependency injection
+======================
+Aim to reduce fixed dependencies between classes. One reason is this makes testing difficult. One way to do this is to use an interface 
+e.g. interface for logging to the console, file logger interface
+
+Delegates
+=========
+delegate - a reference directly to a method (i.e. not pointing to the object 
+
+e.g. in the main function use reference vairables - Action<string> myname = functionName;
+  
+A delegate can be passed around the application as an argument (i.e. passing functions to functions)
+
+e.g. 
+
+```
+myname.Invoke("Fred")
+
+static void SayHello (string name) {
+  console.writeLine($"Hello {name}");
+  }
+```
+
+An action delegate can point to a void method
+
 
 
 
