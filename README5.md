@@ -16,6 +16,8 @@ virtual - set a function to irtual to create a v table lookup of functions that 
 abstract classes - can have same properties and methods and you can indicate properties/methods are abstract
 can't just inherit functionality, you need to implement it.
 
+Let - the let keyword allows you to dfine a locally-scoed type-inferred variable
+
 Inheritance
 ===========
 Anything that 'is a' is an inheritance e.g racing car IS A car.
