@@ -1,3 +1,6 @@
+Visual studio code
+=============================
+
 Install .NET 6
 =================
 1. check existing installation by entering dotnet --list-sdks in the terminal
