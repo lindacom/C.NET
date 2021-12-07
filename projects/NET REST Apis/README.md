@@ -58,7 +58,7 @@ Launch project
 ==============
 1. Click IIS express button in the menu bar and add the /api endpoint to the url.  N.b. you may need to choose a browser.
 
-In the internet explorer browser you will get a message to open or save a .json file. Select open.  Array of json objects is displayed in notepage
+In the internet explorer browser you will get a message to open or save a .json file. Select open.  Array of json objects is displayed in notepad
 In the Chrome broswer and in Firefox XML of database content will be displayed 
 
 Consume API
