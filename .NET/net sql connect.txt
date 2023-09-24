@@ -1,0 +1,2 @@
+ "Server=mysqlserver888.database.windows.net;Port=1433;database=mySampleDatabase;user id=azureuser@mysqlserver888.database.windows.net;password=Lindacom01!"
+ 
