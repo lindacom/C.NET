@@ -1,0 +1,11 @@
+C:\Users\user\Desktop\ASP WEBSITE 2019\myApp\bin\Debug\netcoreapp2.2\myApp.deps.json
+C:\Users\user\Desktop\ASP WEBSITE 2019\myApp\bin\Debug\netcoreapp2.2\myApp.runtimeconfig.json
+C:\Users\user\Desktop\ASP WEBSITE 2019\myApp\bin\Debug\netcoreapp2.2\myApp.runtimeconfig.dev.json
+C:\Users\user\Desktop\ASP WEBSITE 2019\myApp\bin\Debug\netcoreapp2.2\myApp.dll
+C:\Users\user\Desktop\ASP WEBSITE 2019\myApp\bin\Debug\netcoreapp2.2\myApp.pdb
+C:\Users\user\Desktop\ASP WEBSITE 2019\myApp\obj\Debug\netcoreapp2.2\myApp.csprojAssemblyReference.cache
+C:\Users\user\Desktop\ASP WEBSITE 2019\myApp\obj\Debug\netcoreapp2.2\myApp.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ASP WEBSITE 2019\myApp\obj\Debug\netcoreapp2.2\myApp.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\ASP WEBSITE 2019\myApp\obj\Debug\netcoreapp2.2\myApp.AssemblyInfo.cs
+C:\Users\user\Desktop\ASP WEBSITE 2019\myApp\obj\Debug\netcoreapp2.2\myApp.dll
+C:\Users\user\Desktop\ASP WEBSITE 2019\myApp\obj\Debug\netcoreapp2.2\myApp.pdb

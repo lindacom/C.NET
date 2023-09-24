@@ -1,0 +1,27 @@
+<html>
+  <body>
+    <h1>Hello Web Page</h1>
+    <p>The time is @DateTime.Now</p>
+
+    @RenderPage("header.cshtml")
+    <h1>Hello Web Pages</h1>
+    <p>This is a paragraph</p>
+
+    <p>This is header text</p>
+    @RenderBody()
+    <p>&copy; 2014 W3Schools. All rights reserved.</p>
+
+    @{Layout="Layout.cshtml";}
+
+    <h1>Welcome to W3Schools</h1>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea
+      commodo consequat.
+    </p>
+
+    @RenderPage("footer.cshtml")
+  </body>
+</html>
